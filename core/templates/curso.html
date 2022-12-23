@@ -1,0 +1,248 @@
+{% extends 'base.html' %} 
+
+{% block titulo %}{% endblock titulo %} 
+
+{% block estilo %}{% endblock estilo %} 
+
+{% load static %} 
+
+{% block conteudo %}
+
+<div class="container-fluid">
+  <div class="row mt-3">
+
+    <div class="col-lg-4">
+      <div class="card profile-card-2">
+        <div class="card-img-block">
+          <img
+            class="img-fluid"
+            src="{% static 'assets/images/capa-itq.jpg' %}"
+            alt="Card image cap"
+          />
+        </div>
+        <div class="card-body pt-5">
+          <img
+            src="{% static 'assets/images/itq.jpg' %}"
+            alt="profile-image"
+            class="profile"
+          />
+          <h5 class="card-title">{{ curso.nome }}</h5>
+          <h4>
+            Valor: <span class="text-success"> R$ {{ curso.preco }}</span>
+          </h4>
+          <p class="card-text">{{ curso.descricao }}</p>
+          <div class="icon-block">
+            <a href="javascript:void();"
+              ><i class="fa fa-facebook bg-facebook text-white"></i
+            ></a>
+            <a href="javascript:void();">
+              <i class="fa fa-twitter bg-twitter text-white"></i
+            ></a>
+            <a href="javascript:void();">
+              <i class="fa fa-google-plus bg-google-plus text-white"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+            <li class="nav-item">
+              <a
+                href="javascript:void();"
+                data-target="#profile"
+                data-toggle="pill"
+                class="nav-link active"
+                ><i class="icon-book-open"></i>
+                <span class="hidden-xs">Geral</span></a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="javascript:void();"
+                data-target="#messages"
+                data-toggle="pill"
+                class="nav-link"
+                ><i class="icon-envelope-open"></i>
+                <span class="hidden-xs">Mensagens</span></a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="javascript:void();"
+                data-target="#edit"
+                data-toggle="pill"
+                class="nav-link"
+                ><i class="icon-user-following"></i>
+                <span class="hidden-xs">Alunos</span></a
+              >
+            </li>
+          </ul>
+          <div class="tab-content p-3">
+            <div class="tab-pane active" id="profile">
+              <h5 class="mb-3">Dads do Curso</h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Título</h6>
+                  <p> {{curso.nome}} </p>
+                  <h6>Detalhes</h6>
+                  <p>
+                    {{curso.descricao}}
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h6>Tags do Curso</h6>
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >Teologia</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >Bíblia</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >ministério</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >formação</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >confessional</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >quadrangular</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >evangelismo</a
+                  >
+                  <a
+                    href="javascript:void();"
+                    class="badge badge-dark badge-pill"
+                    >chamado</a
+                  >
+                  <hr />
+                  <span class="badge badge-primary"
+                    ><i class="fa fa-user"></i> 900 alunos</span
+                  >
+                  <span class="badge badge-success"
+                    ><i class="fa fa-cog"></i> 43 Recursos</span
+                  >
+                  <span class="badge badge-danger"
+                    ><i class="fa fa-eye"></i> 245 Aulas</span
+                  >
+                </div>
+                <div class="col-md-12">
+                  <h5 class="mt-2 mb-3">
+                    <span class="fa fa-clock-o ion-clock float-right"></span>
+                    Atividades Recentes
+                  </h5>
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <strong>Atualização</strong> de perfil por
+                            <strong>`Admin`</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Nova</strong> inscrição
+                            <strong>`Admin`</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!--/row-->
+            </div>
+            <div class="tab-pane" id="messages">
+              <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                  &times;
+                </button>
+                <div class="alert-icon">
+                  <i class="icon-info"></i>
+                </div>
+                <div class="alert-message">
+                  <span
+                    ><strong>Importante!</strong> Conferir mensagens do curso.</span
+                  >
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="float-right font-weight-bold"
+                          >02/12/2022</span
+                        >
+                        Abertura de inscrições para novos alunos!
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="float-right font-weight-bold"
+                          >12/12/2022</span
+                        >
+                        Não se esqueçam de realizar a <strong>Avaliação...</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="float-right font-weight-bold">19/12/2022</span>
+                        Verifiquem os documentos de cadastro pendentes...
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="edit">
+              <div class="">
+                <h4>Alunos Cadastrados</h4>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="float-right font-weight-bold"
+                          >02/12/2022</span
+                        >
+                        Nenhum aluno até o momento...
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--start overlay-->
+  <div class="overlay toggle-menu"></div>
+  <!--end overlay-->
+</div>
+{% endblock conteudo %} {% block script %}{% endblock script %}

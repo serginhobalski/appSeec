@@ -1,0 +1,77 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block titulo %}{% endblock titulo %} 
+
+{% block estilo %}
+<!--Full Calendar Css-->
+<link
+  href="{% static '' %}assets/plugins/fullcalendar/css/fullcalendar.min.css"
+  rel="stylesheet"
+/>
+{% endblock estilo %} 
+
+{% block conteudo %}
+<div class="container-fluid">
+  <!--Start Dashboard Content-->
+
+  <div class="card mt-3">
+    <div class="card-content">
+      <div class="row row-group m-0">
+        <div class="col-12 col-lg-6 col-xl-6 border-light">
+          <div class="card-body">
+            <h5 class="text-white mb-0">
+              {{ cursos }}
+              <span class="float-right"><i class="fa fa-book"></i></span>
+            </h5>
+            <div class="progress my-3" style="height: 3px">
+              <div class="progress-bar" style="width: 55%"></div>
+            </div>
+            <p class="mb-0 text-white small-font">
+              Cursos Cadastrados
+              <span class="float-right"
+                >-- <i class="zmdi zmdi-long-arrow-up"></i
+              ></span>
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-6 border-light">
+          <div class="card-body">
+            <h5 class="text-white mb-0">
+              {{ clientes }}
+              <span class="float-right"><i class="fa fa-users"></i></span>
+            </h5>
+            <div class="progress my-3" style="height: 3px">
+              <div class="progress-bar" style="width: 55%"></div>
+            </div>
+            <p class="mb-0 text-white small-font">
+              Clientes cadastrados
+              <span class="float-right"
+                >-- <i class="zmdi zmdi-long-arrow-up"></i
+              ></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='calendar'></div>
+
+  </div>
+
+  <!--start overlay-->
+  <div class="overlay toggle-menu"></div>
+  <!--end overlay-->
+  
+  <!--End Dashboard Content-->
+
+  <!--start overlay-->
+  <div class="overlay toggle-menu"></div>
+  <!--end overlay-->
+</div>
+<!-- End container-fluid-->
+{% endblock conteudo %} {% block script %}
+<!-- Full Calendar -->
+<script src="{% static '' %}assets/plugins/fullcalendar/js/moment.min.js"></script>
+<script src="{% static '' %}assets/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+<script src="{% static '' %}assets/plugins/fullcalendar/js/fullcalendar-custom-script.js"></script>
+{% endblock script %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{% endblock titulo %}
+
+{% block estilo %}{% endblock estilo %}
+
+{% block conteudo %}
+<div class="container-fluid">
+  <!--Start Cursos Content-->
+
+  <div class="row">
+    <div class="col-12 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+
+          {{ subtitulo }}
+
+          <div class="card-action">
+            <div class="dropdown">
+              <a
+                href="javascript:void();"
+                class="dropdown-toggle dropdown-toggle-nocaret"
+                data-toggle="dropdown"
+              >
+                <i class="icon-options"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="javascript:void();"
+                  >Ação 1</a>
+                <a class="dropdown-item" href="javascript:void();"
+                  >Ação 2</a>                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table
+            class="table align-items-center table-flush table-borderless"
+          >
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>E-mail</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for cliente in clientes %}
+
+              <tr>
+                <td> <a href="{% url 'cliente' cliente.id %}">{{ cliente.nome }}</a>  </td>
+                <td> {{ cliente.email }} </td>
+              </tr>
+              
+                {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Row-->
+
+  <!--End Dashboard Content-->
+
+  <!--start overlay-->
+  <div class="overlay toggle-menu"></div>
+  <!--end overlay-->
+</div>
+<!-- End container-fluid-->
+{% endblock conteudo %}
+
+{% block script %}{% endblock script %}

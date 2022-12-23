@@ -1,0 +1,79 @@
+{% extends 'base.html' %} 
+
+{% block titulo %}{% endblock titulo %} 
+
+{% block estilo %}{% endblock estilo %} 
+
+{% block conteudo %}
+<div class="container-fluid">
+  <!--Start Cursos Content-->
+
+  <div class="row">
+
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Fale conosco!</div>
+          <hr />
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                class="form-control form-control-rounded"
+                id="nome" name="nome"
+                placeholder="Enter Your Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                type="text"
+                class="form-control form-control-rounded"
+                id="email"
+                placeholder="Enter Your Email Address"
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input
+                type="text"
+                class="form-control form-control-rounded"
+                id="telefone"
+                placeholder="Enter Your Mobile Number"
+              />
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <input
+                type="text"
+                class="form-control form-control-rounded"
+                id="assunto"
+                placeholder="Enter Password"
+              />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea class="form-control form-control-rounded" name="" id="mensagem" cols="30" rows="10" placeholder="Escreva sua mensagem"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-light btn-round px-5">
+                <i class="icon-lock"></i> Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Row-->
+
+  <!--End Dashboard Content-->
+
+  <!--start overlay-->
+  <div class="overlay toggle-menu"></div>
+  <!--end overlay-->
+</div>
+<!-- End container-fluid-->
+{% endblock conteudo %} {% block script %}{% endblock script %}
